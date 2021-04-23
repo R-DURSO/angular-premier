@@ -1,15 +1,14 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {FormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SaerchBarComponent } from './view/saerch-bar/saerch-bar.component';
 import { ResultComponent } from './view/result/result.component';
 import { MainpageComponent } from './view/mainpage/mainpage.component';
-import { CurveComponent } from './service/curve/curve.component';
 import { SelectComponent } from './select/select.component';
 import  {RouterModule, Routes} from "@angular/router";
-
+import {CurveService} from './service/curve-service'
 
 const appRoutes : Routes =[
     {path : 'result', component : ResultComponent },
@@ -24,15 +23,17 @@ const appRoutes : Routes =[
     SaerchBarComponent,
     ResultComponent,
     MainpageComponent,
-    CurveComponent,
     SelectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    CurveService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
