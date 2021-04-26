@@ -1,35 +1,36 @@
-<div>
+
 <div clas="col-xs-4">
     
     <div class="col-xs-2">
         <p style="text-align: center"> courbe : {{index}}</p>
         <p> axe des x</p>
        <label for="1"> valeur 1</label>
-      <input type="number" class='form-control'[ngModel]="valuesX[0]" id="1" >
+      <input type="number" class='form-control'[(ngModel)]="valuesX[0]" id="1" >
       <label for="2"> valeur 2</label>
-      <input type="number" class='form-control'[ngModel]="valuesX[1]"id="2" >
+      <input type="number" class='form-control'[(ngModel)]="valuesX[1]"id="2" >
       <label for="3"> valeur 3</label>
-      <input type="number" class='form-control'[ngModel]="valuesX[2]"id="3" >  
+      <input type="number" class='form-control'[(ngModel)]="valuesX[2]"id="3" >  
       <label for="4"> valeur 4</label>
-      <input type="number" class='form-control'[ngModel]="valuesX[3]"id="4" >
+      <input type="number" class='form-control'[(ngModel)]="valuesX[3]"id="4" >
       <label for="5"> valeur 5</label>  
-      <input type="number" class='form-control'[ngModel]="valuesX[4]"id="5" >  
-      <button (click)="modifyval()"> modifier les valeurs de la courbe  </button>
+      <input type="number" class='form-control'[(ngModel)]="valuesX[4]"id="5" >  
+      <button [disabled]="getStatus()"(click)="modifyval()"> modifier les valeurs de la courbe  </button>
+      <p *ngIf="getStatus()"> la courbe pourra être afficher </p>
     </div>
-<div class="col-xs-2">
-    <h1>
-    </h1>
-    <p>  axe des y </p>
-    <label for="1"> valeur 1</label>
-    <input type="number" class='form-control'[ngModel]="valuesY[0]"id="1" > 
-    <label for="2"> valeur 2</label>
-    <input type="number" class='form-control'[ngModel]="valuesY[1]"id="2" >  
-    <label for="3"> valeur 3</label>
-    <input type="number" class='form-control'[ngModel]="valuesY[2]" id="3"> 
-    <label for="4"> valeur 4</label>
-    <input type="number" class='form-control'[ngModel]="valuesY[3]" id="4">  
-    <label for="5"> valeur 5</label>
-    <input type="number" class='form-control'[ngModel]="valuesY[4]"id="5" >  
-</div>
+    <div class="col-xs-2" style="margin-top: 30px ;">
 
+     <p>  axe des y </p>
+     <label for="1"> valeur 1</label>
+     <input type="number" class='form-control'[(ngModel)]="valuesY[0]"id="1" > 
+      <label for="2"> valeur 2</label>
+      <input type="number" class='form-control'[(ngModel)]="valuesY[1]"id="2" >  
+      <label for="3"> valeur 3</label>
+      <input type="number" class='form-control'[(ngModel)]="valuesY[2]" id="3"> 
+      <label for="4"> valeur 4</label>
+      <input type="number" class='form-control'[(ngModel)]="valuesY[3]" id="4">  
+      <label for="5"> valeur 5</label>
+      <input type="number" class='form-control'[(ngModel)]="valuesY[4]"id="5" >  
+      <button [disabled]="!getStatus()" (click)="deleteVal()"> supprimer les valeurs de la courbe</button>
+    </div>
+ 
 </div>
