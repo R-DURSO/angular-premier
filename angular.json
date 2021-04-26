@@ -22,11 +22,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "customWebpackConfig": {
-              "path": "./webpack.config.js"
-            },
-            
+          "options": {          
             "outputPath": "dist/angular-premier",
             "index": "src/index.html",
             "main": "src/main.ts",

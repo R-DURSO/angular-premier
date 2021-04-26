@@ -8,7 +8,7 @@ import { ResultComponent } from './view/result/result.component';
 import { MainpageComponent } from './view/mainpage/mainpage.component';
 import { SelectComponent } from './select/select.component';
 import  {RouterModule, Routes} from "@angular/router";
-import {CurveService} from './service/curve-service'
+import {CurveService} from './service/curve-service';
 
 const appRoutes : Routes =[
     {path : 'result', component : ResultComponent },
@@ -29,7 +29,7 @@ const appRoutes : Routes =[
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
   ],
   providers: [
     CurveService
