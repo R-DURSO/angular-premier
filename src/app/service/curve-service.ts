@@ -3,8 +3,8 @@ export class CurveService{
  values =[
         { 
             name :'courbe1',
-            valeurX : [0,0,0,0,0],
-            valeurY : [0,0,0,0,0],
+            valeurX : [10,15,0,0,0],
+            valeurY : [0,30,100,0,400],
             status : false
     },
     {

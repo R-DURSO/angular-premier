@@ -9,7 +9,10 @@ import { CurveService } from 'src/app/service/curve-service';
 })
 export class MainpageComponent implements OnInit {
   index = [0,1,2];
+  values = [
+    { name :"courbe 1"},{ name :"courbe 2 "},{ name:" courbe 3"}];
   constructor(private router : Router, private curvesercive : CurveService) { 
+
   }
 
   ngOnInit(): void {

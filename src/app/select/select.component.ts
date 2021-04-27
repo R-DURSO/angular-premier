@@ -9,16 +9,20 @@ import {CurveService} from '../service/curve-service'
 export class SelectComponent implements OnInit {
   valuesX = [0,0,0,0,0];
   valuesY  = [0,0,0,0,0];
+
   status : boolean;
     @Input() index : number;
+    @Input() name : string;
   constructor(private curveService : CurveService) {
     this.index = 0;
     this.status = false ;
+    this.name ="";
    }
  
 
 
   ngOnInit(): void {
+    this.updateValues();
   }
   modifyval(){
     this.curveService.modifyValues( this.index, this.valuesX , this.valuesY);
@@ -31,4 +35,9 @@ export class SelectComponent implements OnInit {
   getStatus(){
     return  this.curveService.getStatus(this.index);
   }
+  updateValues(){
+    this.valuesX=this.curveService.getValuesX( this.index);
+    this.valuesX=this.curveService.getValuesY( this.index);
+  }
 }
+
